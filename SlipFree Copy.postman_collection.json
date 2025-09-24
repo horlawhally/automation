@@ -1,0 +1,2100 @@
+{
+	"info": {
+		"_postman_id": "3f0b3019-aaa0-43ad-ade6-032ab90a85df",
+		"name": "SlipFree Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10064024"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Add new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"olawale.lawal@fcmbtest.com\",\r\n  \"roleId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/add-user",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"add-user"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new user  InvalidUsername",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"olawale.lawal@fcmbtest\",\r\n  \"roleId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/add-user",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"add-user"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new user  existingUsername",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"olawale.lawal@fcmbtest\",\r\n  \"roleId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/add-user",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"add-user"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roleName\": \"Quality Assurance Engineer\",\r\n  \"roleDescription\": \"Tesrer\",\r\n  \"debitLimt\": 0,\r\n  \"debitLimtFCY\": 0,\r\n  \"creditLimit\": 0,\r\n  \"creditLimitFCY\": 0,\r\n  \"canApprove\": true,\r\n  \"tillAccount\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/add-role",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"add-role"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User record",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Awhy\",\r\n  \"roleId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/update-user",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"update-user"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role record",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 9,\r\n  \"roleName\": \"Quality Assurance Engineer\",\r\n  \"roleDescription\": \"Tester\",\r\n  \"debitLimt\": 0,\r\n  \"debitLimtFCY\": 0,\r\n  \"creditLimit\": 0,\r\n  \"creditLimitFCY\": 0,\r\n  \"canApprove\": true,\r\n  \"tillAccount\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/update-role",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"update-role"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/roles",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"roles"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/user?username=Awhy",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"user"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Awhy"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get role details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/role?roleId=3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"role"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": "3"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users in a role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/role-users?roleId=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"role-users"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/admin/role-users?roleId",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"admin",
+								"role-users"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": null
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Approval",
+			"item": [
+				{
+					"name": "Approval Lists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/approval/approval-lists",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"approval",
+								"approval-lists"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "branchCode",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "transactionType",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Dashboard Analytics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Dashboard Analytics data returned\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).not.to.empty;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/:version/dashboard/analytics?userName=Onyekachi.Okosun",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"dashboard",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "Onyekachi.Okosun"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dashboard Analytics Invalid Username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Dashboard Analytics Invalid Username\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.empty;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/:version/dashboard/analytics?userName=Invalid",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"dashboard",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "Invalid"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dashboard Analytics No Username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Dashboard Analytics No Username\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.empty;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/:version/dashboard/analytics?userName=",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"dashboard",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dashboard Analytics No Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/:version/dashboard/analytics?userName=Onyekachi.Okosun",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"dashboard",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "Onyekachi.Okosun"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Deposit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isOwner\": true,\r\n  \"depositType\": \"cash\",\r\n  \"currencyType\": \"NGN\",\r\n  \"depositorName\": \"Olawale\",\r\n  \"depositorPhoneNo\": \"09092163592\",\r\n  \"narration\": \"testing\",\r\n  \"accountNumber\": \"9123719014\",\r\n  \"amount\": 40000,\r\n  \"remark\": \"string\",\r\n  \"denominations\": [\r\n    {\r\n      \"denomination\": 1000,\r\n      \"quantity\": 40,\r\n      \"amount\": 40000\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/deposit",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"deposit"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Withdraw",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isOwner\": true,\r\n  \"bvn\": \"string\",\r\n  \"currencyType\": \"string\",\r\n  \"instrumentDate\": \"2023-07-05T15:20:06.721Z\",\r\n  \"instrumentType\": \"string\",\r\n  \"instrumentNumber\": \"string\",\r\n  \"narration\": \"string\",\r\n  \"phoneNumber\": \"string\",\r\n  \"accountNumber\": \"string\",\r\n  \"accountNumberType\": \"string\",\r\n  \"tellerAccountNumber\": \"string\",\r\n  \"tellerAccountNumberType\": \"string\",\r\n  \"amount\": 0,\r\n  \"amountInWords\": \"string\",\r\n  \"accountBranchCode\": \"string\",\r\n  \"initiator\": \"string\",\r\n  \"initiatorBranchCode\": \"string\",\r\n  \"slipFreeId\": \"string\",\r\n  \"draweeName\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/deposit",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"deposit"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FCMB Transfer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isOwner\": true,\r\n  \"currencyType\": \"string\",\r\n  \"senderBvn\": \"string\",\r\n  \"instrumentType\": \"string\",\r\n  \"instrumentNumber\": \"string\",\r\n  \"beneficiaryName\": \"string\",\r\n  \"narration\": \"string\",\r\n  \"phoneNumber\": \"string\",\r\n  \"benefactorAccountNumber\": \"string\",\r\n  \"benefactorAccountNumberType\": \"string\",\r\n  \"beneficiaryAccountNumber\": \"string\",\r\n  \"beneficiaryAccountNumberType\": \"string\",\r\n  \"amount\": 0,\r\n  \"amountInWords\": \"string\",\r\n  \"benefactorBranchCode\": \"string\",\r\n  \"initiator\": \"string\",\r\n  \"initiatorBranchCode\": \"string\",\r\n  \"slipFreeId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/fcmbtransfer",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"fcmbtransfer"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inter-Bank Transfer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isOwner\": true,\r\n  \"amount\": 0,\r\n  \"currencyType\": \"string\",\r\n  \"debitAccountBvn\": \"string\",\r\n  \"creditAccountBvn\": \"string\",\r\n  \"instrumentType\": \"string\",\r\n  \"instrumentRefNumber\": \"string\",\r\n  \"instrumentDate\": \"string\",\r\n  \"creditAccountName\": \"string\",\r\n  \"debitAccountName\": \"string\",\r\n  \"narration\": \"string\",\r\n  \"phoneNumber\": \"string\",\r\n  \"debitAccountNumber\": \"string\",\r\n  \"debitAccountNumberType\": \"string\",\r\n  \"creditAccountNumber\": \"string\",\r\n  \"creditAccountBankCode\": \"string\",\r\n  \"amountInWords\": \"string\",\r\n  \"debitAccountBranchCode\": \"string\",\r\n  \"initiator\": \"string\",\r\n  \"initiatorBranchCode\": \"string\",\r\n  \"slipFreeId\": \"string\",\r\n  \"channelCode\": \"string\",\r\n  \"debitAccountKycLevel\": \"string\",\r\n  \"creditAccountKycLevel\": \"string\",\r\n  \"nameEnquiryReference\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/interbanktransfer",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"interbanktransfer"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account Enquiry By Account Number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/accountbynumber?accountNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"accountbynumber"
+							],
+							"query": [
+								{
+									"key": "accountNumber",
+									"value": null
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inter-Bank Account Enquiry By Account Number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/interbankaccountenquiry?DestinationInstitutionCode&AccountNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"interbankaccountenquiry"
+							],
+							"query": [
+								{
+									"key": "DestinationInstitutionCode",
+									"value": null
+								},
+								{
+									"key": "AccountNumber",
+									"value": null
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all approval roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/approvals-roles",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"approvals-roles"
+							],
+							"query": [
+								{
+									"key": "DestinationInstitutionCode",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "accountNumber",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cheque Inquiry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestId\": \"string\",\r\n  \"forAcid\": \"string\",\r\n  \"solid\": \"string\",\r\n  \"beginChequeNumber\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/accountbynumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"accountbynumber"
+							],
+							"query": [
+								{
+									"key": "DestinationInstitutionCode",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "accountNumber",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Alll Banks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/:version/transaction/banks",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"transaction",
+								"banks"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Login User Successful\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.user).not.to.empty;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Login User - Access Token is returned\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.accessToken).not.to.empty;\r",
+									"});\r",
+									"\r",
+									"pm.environment.set(\"token\", pm.response.json().data.accessToken)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"ayokunmi.lawal@fcmbtest.com\",\r\n  \"password\": \"#unges15lay\",\r\n  \"token\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"login"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User - Invalid Username or Empty Username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"if(pm.response.statusCode == 200)\r",
+									"{pm.environment.set(\"token\", pm.response.json().data.accessToken)}\r",
+									"\r",
+									"pm.test(\"Login User - Invalid Username\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Invalid username or password supplied\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Login User - Invalid Username Data should be empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Onyekachi.Okos\",\r\n  \"password\": \"@0ye#w0koch1\",\r\n  \"token\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"login"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User - Invalid Password or Empty Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"if(pm.response.statusCode == 200)\r",
+									"{pm.environment.set(\"token\", pm.response.json().data.accessToken)}\r",
+									"\r",
+									"pm.test(\"Login User - Invalid Password or Empty Password\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Invalid username or password supplied\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Login User - Invalid Password or Empty Password Data should be empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Onyekachi.Okos\",\r\n  \"password\": \"@0ye#w0koch1\",\r\n  \"token\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"login"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User - Invalid Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"if(pm.response.statusCode == 200)\r",
+									"{pm.environment.set(\"token\", pm.response.json().data.accessToken)}\r",
+									"\r",
+									"pm.test(\"Login User - Invalid Token\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.Token.errors[0].errorMessage).to.eql(\"Token must be at least 6 characters\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Onyekachi.Okos\",\r\n  \"password\": \"@0ye#w0koch1\",\r\n  \"token\": \"@0ye#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"login"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User - Empty Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"if(pm.response.statusCode == 200)\r",
+									"{pm.environment.set(\"token\", pm.response.json().data.accessToken)}\r",
+									"\r",
+									"pm.test(\"Login User - Empty Token\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Invalid username or password supplied\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Login User - Empty Token\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Onyekachi.Okosun\",\r\n  \"password\": \"@0ye#w0koch1\",\r\n  \"token\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"login"
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get User Details\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).eql(\"Successful\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User Data is returned\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).not.to.empty;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/get-user-details?username=olawale.lawal@fcmbtest.com",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"get-user-details"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "olawale.lawal@fcmbtest.com"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details Invalid Username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get User Details Invalid Username\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Record not found\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get User Details Invalid Username Data not returned\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/get-user-details?username=Invalid",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"get-user-details"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Invalid"
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details Empty UserName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get User Details Invalid Username\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Record not found\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get User Details Invalid Username Data not returned\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/:version/user/get-user-details?username=",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								":version",
+								"user",
+								"get-user-details"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "version",
+									"value": "v1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogOutUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/user/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
